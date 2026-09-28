@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSHN 689: Nutritional Epidemiology</title>
+    <style>
+        :root {
+            --primary-color: #005A36; /* Dark Green, appropriate for UH */
+            --secondary-color: #F7F7F7;
+            --text-color: #333333;
+            --border-color: #DDDDDD;
+            --link-color: #0072CE;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #ffffff;
+            font-size: 18px; /* Large readable text */
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+
+        nav {
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            scroll-margin-top: 60px; /* Adjust for sticky nav */
+        }
+
+        h2.section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        /* Lists */
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+            background-color: white;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        /* Links */
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .alert {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 1rem;
+            border-left: 5px solid #ffeeba;
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul li a {
+                padding: 0.8rem;
+                border-bottom: 1px solid #444;
+            }
+            nav ul li:last-child a {
+                border-bottom: none;
+            }
+            body {
+                font-size: 16px;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="top">
+        <h1>FSHN 689: Nutritional Epidemiology</h1>
+        <h2>Instructor: Dr. Monica Esquivel PhD RDN CSSD</h2>
+        <h2>Semester: Spring 2027</h2>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#glance">Course at a glance</a></li>
+            <li><a href="#schedule">Weekly schedule</a></li>
+            <li><a href="#grades">How grades work</a></li>
+            <li><a href="#policies">Policies</a></li>
+            <li><a href="#practice">Practice</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="glance">
+            <h2 class="section-title">Course at a glance</h2>
+            <ul>
+                <li><strong>Class Location / Format:</strong> Online / Hybrid</li>
+                <li><strong>Office Hours:</strong> TBD / Available via Zoom by appointment</li>
+            </ul>
+        </section>
+
+        <section id="schedule">
+            <h2 class="section-title">Weekly schedule</h2>
+            
+            <div class="alert">
+                <p><strong>Note on Submission Deadlines:</strong> All weekly learning activities and assessments are due on Fridays at 11:59 PM HST.</p>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Topic</th>
+                            <th>Reading</th>
+                            <th>What is Due</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Week 1<br>(Jan 11 – Jan 15)</td>
+                            <td>Foundations of Nutritional Epidemiology</td>
+                            <td>
+                                <ul>
+                                    <li>Willett, Chapter 1</li>
+                                    <li>Satija A, et al. (Adv Nutr. 2015)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Discussion Board Submission (audio reflection)</li>
+                                    <li>Module 1 Quiz</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Week 2<br>(Jan 18 – Jan 22)</td>
+                            <td>24-Hour Recalls and Dietary Records</td>
+                            <td>
+                                <ul>
+                                    <li>Willett, Chapters 3 & 4</li>
+                                    <li>Kirkpatrick SI, et al. (Am J Clin Nutr. 2014)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>System Bug Report</li>
+                                    <li><a href="https://docs.google.com/document/d/1QkDBtiE5xQVph_uDnMeGnoaVttHvQQAJjUO0HA_AoC4/edit?tab=t.0#heading=h.x7bkqzxkwaz7">Course Project: Nutrition Assessment Services Proposal (Part 1)</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Week 3<br>(Jan 25 – Jan 29)</td>
+                            <td>Food Frequency Questionnaires (FFQs)</td>
+                            <td>
+                                <ul>
+                                    <li>Willett, Chapter 5</li>
+                                    <li>Cade J, et al. (Public Health Nutr. 2002)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Individual Comments & Group Video / Peer Feedback</li>
+                                    <li>Part 4 Infographic Nutrient Selection</li>
+                                </ul>
+                                <p>
+                                    <a href="#">See here for full instructions</a><br>
+                                    <a href="#">Select nutrient for part 4 infographic from this list: </a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Week 4<br>(Feb 1 – Feb 5)</td>
+                            <td>Biomarkers of Nutrient Intake</td>
+                            <td>
+                                <ul>
+                                    <li>Willett, Chapter 7</li>
+                                    <li>Assigned research paper</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Infographic Project Submission</li>
+                                </ul>
+                                <p>
+                                    <a href="#">Full Instructions HERE</a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Week 5<br>(Feb 8 – Feb 12)</td>
+                            <td>Anthropometry, Body Composition, and Energy Expenditure</td>
+                            <td>
+                                <ul>
+                                    <li>Willett, Chapters 9 & 10</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li><a href="https://docs.google.com/document/d/1QkDBtiE5xQVph_uDnMeGnoaVttHvQQAJjUO0HA_AoC4/edit?tab=t.0#heading=h.x7bkqzxkwaz7">Course Project: Nutrition Assessment Services Proposal (Parts 1 and 2 submission)</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Week 6<br>(Feb 15 – Feb 19)</td>
+                            <td>Correction for Measurement Error and Calibration</td>
+                            <td>
+                                <ul>
+                                    <li>Willett, Chapters 11 & 12</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Course Project: Nutrition Assessment Services Proposal (Part 3)</li>
+                                    <li>Summative Problem Set</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Week 7<br>(Feb 22 – Feb 26)</td>
+                            <td>Cross-Sectional and Ecologic Study Designs</td>
+                            <td>
+                                <ul>
+                                    <li>Willett, Chapter 12</li>
+                                    <li>Classic ecologic nutrition study reading</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Midterm Research Proposal (Part 1)</li>
+                                </ul>
+                                <p>
+                                    <a href="#">(See full instructions)</a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Week 8<br>(Mar 1 – Mar 5)</td>
+                            <td>Case-Control Studies in Nutritional Epidemiology</td>
+                            <td>
+                                <ul>
+                                    <li>Willett, Chapter 13</li>
+                                    <li>Peres SV, et al. (Cancer Causes Control. 2022)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Research Proposal Expansion (Part 2)</li>
+                                </ul>
+                                <p>
+                                    <a href="#">(See full instructions)</a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Week 9<br>(Mar 8 – Mar 12)</td>
+                            <td>Cohort Studies in Nutritional Epidemiology</td>
+                            <td>
+                                <ul>
+                                    <li>Willett, Chapter 14</li>
+                                    <li>Key findings from the Nurses’ Health Study or EPIC study</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Research Proposal Expansion (Part 3)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="text-align: center; background-color: var(--secondary-color);">
+                                <strong>Spring Recess: March 15 – March 19</strong><br>
+                                (No instruction or scheduled assignments)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Week 10<br>(Mar 22 – Mar 26)</td>
+                            <td>Randomized Controlled Trials (RCTs)</td>
+                            <td>
+                                <ul>
+                                    <li>Willett, Chapter 15</li>
+                                    <li>Estruch R, et al. (NEJM. 2018)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Discussion Board Post</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Week 11<br>(Mar 29 – Apr 2)</td>
+                            <td>Dietary Patterns and Score Analysis</td>
+                            <td>
+                                <ul>
+                                    <li>Willett, Chapter 16</li>
+                                    <li>Hu FB. (Curr Opin Lipidol. 2002)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Analytical Literature Review</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Week 12<br>(Apr 5 – Apr 9)</td>
+                            <td>Nutritional Epidemiology and Cardiovascular Disease (CVD)</td>
+                            <td>
+                                <ul>
+                                    <li>Willett, Chapter 19</li>
+                                    <li>Siri-Tarino PW, et al. (Am J Clin Nutr. 2010)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Data Synthesis Quiz</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Week 13<br>(Apr 12 – Apr 16)</td>
+                            <td>Nutritional Epidemiology and Cancer</td>
+                            <td>
+                                <ul>
+                                    <li>Willett, Chapter 18</li>
+                                    <li>WCRF / AICR Reports</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Peer Video Evaluation</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Week 14<br>(Apr 19 – Apr 23)</td>
+                            <td>Gene-Diet Interactions and Obesity</td>
+                            <td>
+                                <ul>
+                                    <li>Willett, Chapter 21</li>
+                                    <li>Qi Q, et al. (NEJM. 2012)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Gene-Diet Directory Contribution Submission</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Week 15<br>(Apr 26 – Apr 30)</td>
+                            <td>Translating Research to Public Policy</td>
+                            <td>
+                                <ul>
+                                    <li>Willett, Chapter 22</li>
+                                    <li>Reports & Statements (Dietary Guidelines, WHO, Academy of Nutrition and Dietetics)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Final 2-Page Policy Brief</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Final Exam & Wrap-Up Period:</strong> May 5 – May 14, 2027</p>
+        </section>
+
+        <section id="grades">
+            <h2 class="section-title">How grades work</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Assignment Category</th>
+                            <th>Included Deliverables & Components</th>
+                            <th>% of Final Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Weekly Discussions & Engagement</td>
+                            <td>Discussions (W1, W10, W12), LMS Contributions (W14), Peer Video Critiques (W3, W13)</td>
+                            <td>15%</td>
+                        </tr>
+                        <tr>
+                            <td>Methodological Labs & Technical Critiques</td>
+                            <td>ASA24 Bug Report (W2), FFQ Redesign & Video (W3), Biomarker Infographic (W4), Data Synthesis Quiz & Quizzes (W1, W12)</td>
+                            <td>20%</td>
+                        </tr>
+                        <tr>
+                            <td>Nutrition Assessment Proposal</td>
+                            <td>Parts 1, 2, and 3 Submissions (Weeks 2, 5, 6)</td>
+                            <td>20%</td>
+                        </tr>
+                        <tr>
+                            <td>Epidemiologic Research Proposal</td>
+                            <td>Parts 1, 2, and 3 (Cross-Sectional, Case-Control Pivot, Cohort Expansion) (Weeks 7, 8, 9)</td>
+                            <td>25%</td>
+                        </tr>
+                        <tr>
+                            <td>Critical Reviews & Policy Translation</td>
+                            <td>Analytical Lit Review (W11), Expert Witness Video (W13), Final Policy Brief (W15)</td>
+                            <td>20%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="policies">
+            <h2 class="section-title">Policies</h2>
+            <ul>
+                <li><strong>Assignment Submission & Late Work:</strong> Submissions made after the Friday 11:59 PM HST deadline incur a 10% deduction per day late, up to a maximum of 3 days (30% deduction). Assignments submitted more than 72 hours late will not be accepted for credit without prior instructor approval.</li>
+                <li><strong>Academic Integrity:</strong> Submitting another person's work, ideas, or data as your own without proper citation constitutes academic dishonesty and will result in a zero for the assignment, potential course failure, and referral to the Dean of Students.</li>
+                <li><strong>Generative Artificial Intelligence (AI):</strong> AI tools may be utilized as supplementary tools (brainstorming, proofreading, coding). Any use must be explicitly disclosed. Direct copying/pasting of AI-generated prose or analysis is prohibited and constitutes a violation of academic integrity.</li>
+                <li><strong>Disability Accommodations:</strong> Contact the KOKUA Program at (808) 956-7511 if you have a disability and require accommodations.</li>
+                <li><strong>Title IX:</strong> The University is committed to a learning environment free from sex discrimination and sexual violence. Instructors are designated as "Responsible Employees" and are required to report incidents.</li>
+                <li><strong>Communication:</strong> Check the LMS daily. Emails will typically receive a response within 24–48 hours on business days.</li>
+            </ul>
+        </section>
+
+        <section id="practice">
+            <h2 class="section-title">Practice</h2>
+            <p><a href="quiz.html">Practice quiz</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2027 Dr. Monica Esquivel PhD RDN CSSD</p>
+    </footer>
+
+</body>
+</html>
